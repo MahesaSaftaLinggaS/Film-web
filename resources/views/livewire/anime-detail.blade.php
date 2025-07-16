@@ -11,7 +11,7 @@
 
     <div class="mt-6">
         <h2 class="text-lg font-semibold">Daftar Episode</h2>
-        
+
         <ul class="mt-2 list-disc list-inside text-sm text-gray-700">
     @forelse ($episodes as $ep)
         <li>
@@ -30,3 +30,4 @@
 
     </div>
 </div>
+

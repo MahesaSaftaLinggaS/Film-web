@@ -7,6 +7,8 @@ use App\Livewire\EpisodeDetail;
 use App\Livewire\Admin\EpisodeForm;
 use App\Livewire\Admin\EpisodeTable;
 use App\Livewire\Admin\EditEpisode;
+use App\Livewire\Admin\AnimeCreate;
+
 
 
 
@@ -22,3 +24,5 @@ Route::get('/admin/episode/create', EpisodeForm::class)->name('admin.episode.cre
 Route::get('/admin/episode', EpisodeTable::class)->name('admin.episode.index');
 
 Route::get('/admin/episode/edit/{id}', EditEpisode::class)->name('admin.episode.edit');
+
+Route::get('/admin/anime/create', AnimeCreate::class)->name('admin.anime.create');

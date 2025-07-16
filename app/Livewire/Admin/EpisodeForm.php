@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use Livewire\Component;
 use App\Models\Episode;
 use App\Models\Anime;
+use Illuminate\Validation\Rule;
 
 class EpisodeForm extends Component
 {

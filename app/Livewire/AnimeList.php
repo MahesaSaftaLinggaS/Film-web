@@ -14,9 +14,15 @@ class AnimeList extends Component
         $this->animes = Anime::latest()->get();
     }
 
+    // AnimeList.php (Livewire Component)
+    public $search = '';
+
     public function render()
     {
-        return view('livewire.anime-list');
+        $animes = Anime::where('title', 'like', '%' . $this->search . '%')
+            ->latest()
+            ->get();
+
+        return view('livewire.anime-list', compact('animes'));
     }
 }
-
