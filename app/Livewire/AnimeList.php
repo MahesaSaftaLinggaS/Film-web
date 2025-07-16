@@ -4,25 +4,22 @@ namespace App\Livewire;
 
 use App\Models\Anime;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class AnimeList extends Component
 {
-    public $animes;
-
-    public function mount()
-    {
-        $this->animes = Anime::latest()->get();
-    }
-
-    // AnimeList.php (Livewire Component)
+    use WithPagination;
+    
     public $search = '';
 
     public function render()
     {
         $animes = Anime::where('title', 'like', '%' . $this->search . '%')
             ->latest()
-            ->get();
+            ->paginate(5);
 
-        return view('livewire.anime-list', compact('animes'));
+        return view('livewire.anime-list', ['animes' => $animes])
+            ->layout('components.layouts.app'); // Wajib ada ini
     }
+    
 }

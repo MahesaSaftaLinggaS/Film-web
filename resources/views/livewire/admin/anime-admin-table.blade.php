@@ -19,6 +19,7 @@
                     <th class="p-3">Aksi</th>
                 </tr>
             </thead>
+        
             <tbody>
                 @foreach ($animes as $anime)
                 <tr class="border-t">
@@ -38,4 +39,10 @@
             </tbody>
         </table>
     </div>
+    <div class="mt-4">
+    {{ $animes->links() }}
 </div>
+</div>
+
+
+

@@ -13,9 +13,6 @@ use App\Http\Controllers\Admin\AnimeDeleteController;
 use App\Livewire\Admin\AnimeAdminTable;
 
 
-
-
-
 Route::get('/', AnimeList::class);
 
 Route::get('/anime/{slug}', AnimeDetail::class)->name('anime.detail');

@@ -13,6 +13,8 @@
             <p class="text-xs text-gray-600">{{ $anime->status }} - {{ $anime->released_year }}</p>
         </a>
         @endforeach
+
+        {{ $animes->links() }}
     </div>
 
 </div> {{-- Tutup root tunggal --}}
