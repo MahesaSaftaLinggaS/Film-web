@@ -15,7 +15,7 @@ use App\Livewire\Admin\GenreAdminTable;
 use App\Http\Controllers\GenreController;
 use App\Livewire\OnGoingAnime;
 use App\Livewire\CompletedAnime;
-use App\Livewire\AnimeIndex;
+use App\Livewire\GenreList;
 
 Route::get('/', AnimeList::class);
 
@@ -47,4 +47,4 @@ Route::get('/ongoing-anime', OnGoingAnime::class)->name('ongoing.anime');
 
 Route::get('/completed-anime', CompletedAnime::class)->name('completed.anime');
 
-
+Route::get('/genres', GenreList::class)->name('genres.list');
