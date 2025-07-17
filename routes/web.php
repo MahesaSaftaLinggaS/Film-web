@@ -12,9 +12,10 @@ use App\Livewire\Admin\EditAnime;
 use App\Http\Controllers\Admin\AnimeDeleteController;
 use App\Livewire\Admin\AnimeAdminTable;
 use App\Livewire\Admin\GenreAdminTable;
-
 use App\Http\Controllers\GenreController;
-
+use App\Livewire\OnGoingAnime;
+use App\Livewire\CompletedAnime;
+use App\Livewire\AnimeIndex;
 
 Route::get('/', AnimeList::class);
 
@@ -41,4 +42,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 Route::get('/genre/{slug}', [GenreController::class, 'show'])->name('genre.show');
+
+Route::get('/ongoing-anime', OnGoingAnime::class)->name('ongoing.anime');
+
+Route::get('/completed-anime', CompletedAnime::class)->name('completed.anime');
+
 
