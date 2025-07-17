@@ -11,6 +11,7 @@ use App\Livewire\Admin\AnimeCreate;
 use App\Livewire\Admin\EditAnime;
 use App\Http\Controllers\Admin\AnimeDeleteController;
 use App\Livewire\Admin\AnimeAdminTable;
+use App\Livewire\Admin\GenreAdminTable;
 
 
 Route::get('/', AnimeList::class);
@@ -32,3 +33,8 @@ Route::get('/admin/anime/edit/{id}', EditAnime::class)->name('admin.anime.edit')
 Route::delete('/admin/anime/delete/{id}', [AnimeDeleteController::class, 'destroy'])->name('admin.anime.delete');
 
 Route::get('/admin/anime', AnimeAdminTable::class)->name('admin.anime.index');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/genres', GenreAdminTable::class)->name('genres.index');
+});
+

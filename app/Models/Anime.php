@@ -17,4 +17,10 @@ class Anime extends Model
     {
         return $this->hasMany(\App\Models\Episode::class);
     }
+
+    public function genres()
+{
+    return $this->belongsToMany(Genre::class);
+}
+
 }

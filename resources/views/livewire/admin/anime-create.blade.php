@@ -42,7 +42,16 @@
             <input type="number" wire:model="released_year" class="w-full border rounded p-2">
         </div>
 
+        <div class="mb-4">
+            <label class="block mb-2 font-semibold">Genre:</label>
+            @foreach ($allGenres as $genre)
+                <label class="inline-flex items-center mr-4 mb-2">
+                    <input type="checkbox" wire:model="selectedGenres" value="{{ $genre->id }}" class="form-checkbox">
+                    <span class="ml-2">{{ $genre->name }}</span>
+                </label>
+            @endforeach
+        </div>
+
         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Simpan</button>
     </form>
-    
 </div>

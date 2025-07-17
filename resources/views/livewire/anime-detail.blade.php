@@ -6,6 +6,16 @@
             <p class="text-sm text-gray-600 mb-2">Status: {{ $anime->status }}</p>
             <p class="text-sm text-gray-600 mb-2">Tahun Rilis: {{ $anime->released_year }}</p>
             <p class="text-gray-800 text-sm mt-4">{{ $anime->description }}</p>
+
+            @if ($anime->genres->isNotEmpty())
+    <p class="text-sm text-gray-600 mb-2">
+        Genre:
+        @foreach ($anime->genres as $genre)
+            <span class="inline-block bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded mr-1">{{ $genre->name }}</span>
+        @endforeach
+    </p>
+@endif
+
         </div>
     </div>
 

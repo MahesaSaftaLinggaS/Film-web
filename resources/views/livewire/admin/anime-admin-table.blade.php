@@ -9,6 +9,13 @@
 
     <a href="{{ route('admin.anime.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ Tambah Anime</a>
 
+    <li>
+    <a href="{{ route('admin.genres.index') }}" class="block px-4 py-2 hover:bg-gray-100">
+        Kelola Genre
+    </a>
+</li>
+
+
     <div class="bg-white shadow rounded">
         <table class="w-full text-sm text-left">
             <thead class="bg-gray-100">
