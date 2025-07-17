@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\AnimeDeleteController;
 use App\Livewire\Admin\AnimeAdminTable;
 use App\Livewire\Admin\GenreAdminTable;
 
+use App\Http\Controllers\GenreController;
+
 
 Route::get('/', AnimeList::class);
 
@@ -37,4 +39,6 @@ Route::get('/admin/anime', AnimeAdminTable::class)->name('admin.anime.index');
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/genres', GenreAdminTable::class)->name('genres.index');
 });
+
+Route::get('/genre/{slug}', [GenreController::class, 'show'])->name('genre.show');
 
